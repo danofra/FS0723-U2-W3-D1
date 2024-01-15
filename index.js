@@ -21,13 +21,11 @@ class User {
     }
   }
 }
-
 const user1 = new User("Liborio Daniele", "Frasca", 26, "Vittoria");
 const user2 = new User("Lucio", "Battisti", 55, "Roma");
 const user3 = new User("Adriano", "Celentano", 86, "Bologna");
 const user4 = new User("Vasco", "Rossi", 71, "Zocca");
 const user5 = new User("Cristiano ", "Mangioglio", 78, "Ramacca");
-
 user1.ages();
 user2.ages();
 user3.ages();
@@ -40,14 +38,13 @@ user3.comparation(user2.age, user2.firstName, user2.lastName);
 user4.comparation(user3.age, user3.firstName, user3.lastName);
 user5.comparation(user4.age, user4.firstName, user4.lastName);
 
+//Esercizio numero 2
 const nameInput = document.getElementById("namePets");
 const ownerInput = document.getElementById("nameOwner");
 const speciesInput = document.getElementById("species");
 const breedInput = document.getElementById("breed");
 const saveButton = document.querySelector("form button");
-
 const contactsPets = [];
-
 class Pet {
   constructor(_petName, _ownerName, _species = [], _breed = []) {
     this.namePets = _petName;
@@ -88,7 +85,13 @@ formPets.addEventListener("submit", function (e) {
     species.value,
     breed.value
   );
-
+  formPets.addEventListener("reset", function (e) {
+    e.preventDefault();
+    (namePets.value = ""),
+      (nameOwner.value = ""),
+      (species.value = ""),
+      (breed.value = "");
+  });
   console.log(newPet);
   contactsPets.push(newPet);
   addPets();
