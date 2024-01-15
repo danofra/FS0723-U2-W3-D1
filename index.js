@@ -39,3 +39,56 @@ user2.comparation(user1.age, user1.firstName, user1.lastName);
 user3.comparation(user2.age, user2.firstName, user2.lastName);
 user4.comparation(user3.age, user3.firstName, user3.lastName);
 user5.comparation(user4.age, user4.firstName, user4.lastName);
+
+const nameInput = document.getElementById("namePets");
+const ownerInput = document.getElementById("nameOwner");
+const speciesInput = document.getElementById("species");
+const breedInput = document.getElementById("breed");
+const saveButton = document.querySelector("form button");
+
+const contactsPets = [];
+
+class Pet {
+  constructor(_petName, _ownerName, _species = [], _breed = []) {
+    this.petName = _petName;
+    this.ownerName = _ownerName;
+    this.species = _species;
+    this.breed = _breed;
+  }
+}
+const addPets = function () {
+  const row = document.getElementById("pet");
+  row.innerHTML = "";
+
+  contactsPets.forEach((pet) => {
+    const newCol = document.createElement("div");
+    newCol.classList.add("col");
+    newCol.innerHTML = `
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">${pet.namePets} ${pet.nameOwner}</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">${pet.species}</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">${pet.breed}</h6>
+              </div>
+          </div>
+          `;
+    row.appendChild(newCol);
+  });
+  namePets.value = "";
+  nameOwner.value = "";
+  species.value = "";
+  breed.value = "";
+};
+const formPets = document.getElementsByTagName("form")[0];
+formPets.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const newPet = new Pet(
+    namePets.value,
+    nameOwner.value,
+    species.value,
+    breed.value
+  );
+
+  console.log(newPet);
+  contactsPets.push(contactsPets);
+});
