@@ -61,9 +61,9 @@ const addPets = function () {
   row.innerHTML = "";
 
   contactsPets.forEach((pet) => {
-    const newCol = document.createElement("div");
-    newCol.classList.add("col");
-    newCol.innerHTML = `
+    const col = document.createElement("div");
+    col.classList.add("col");
+    col.innerHTML = `
           <div class="card">
               <div class="card-body">
                   <h5 class="card-title">${pet.namePets} ${pet.nameOwner}</h5>
@@ -72,7 +72,7 @@ const addPets = function () {
               </div>
           </div>
           `;
-    row.appendChild(newCol);
+    row.appendChild(col);
   });
   namePets.value = "";
   nameOwner.value = "";
