@@ -50,25 +50,25 @@ const contactsPets = [];
 
 class Pet {
   constructor(_petName, _ownerName, _species = [], _breed = []) {
-    this.petName = _petName;
+    this.namePets = _petName;
     this.ownerName = _ownerName;
     this.species = _species;
     this.breed = _breed;
   }
 }
 const addPets = function () {
-  const row = document.getElementById("pet");
+  const row = document.getElementById("cardPets");
   row.innerHTML = "";
-
   contactsPets.forEach((pet) => {
     const col = document.createElement("div");
     col.classList.add("col");
     col.innerHTML = `
           <div class="card">
               <div class="card-body">
-                  <h5 class="card-title">${pet.namePets} ${pet.nameOwner}</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">${pet.species}</h6>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">${pet.breed}</h6>
+                  <h5 class="card-title">Name Pets: ${pet.namePets}</h5>
+                  <h6 class="card-title">Name Owner: ${pet.ownerName}</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">Species: ${pet.species}</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">Breed: ${pet.breed}</h6>
               </div>
           </div>
           `;
@@ -90,5 +90,6 @@ formPets.addEventListener("submit", function (e) {
   );
 
   console.log(newPet);
-  contactsPets.push(contactsPets);
+  contactsPets.push(newPet);
+  addPets();
 });

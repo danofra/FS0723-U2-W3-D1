@@ -24,6 +24,7 @@
                   type="text"
                   class="form-control"
                   id="namePets"
+                  aria-describedby="emailHelp"
                   required
                 />
               </div>
@@ -34,18 +35,31 @@
                   type="text"
                   class="form-control"
                   id="nameOwner"
+                  aria-describedby="emailHelp"
                   required
                 />
               </div>
 
               <div class="mb-2">
                 <label for="species" class="form-label">Specie</label>
-                <input type="text" class="form-control" id="species" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="species"
+                  aria-describedby="emailHelp"
+                  required
+                />
               </div>
 
               <div class="mb-2">
                 <label for="breed" class="form-label">Razza</label>
-                <input type="text" class="form-control" id="breed" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="breed"
+                  aria-describedby="emailHelp"
+                  required
+                />
               </div>
               <button type="submit" class="btn btn-primary">Aggiungi</button>
             </form>
@@ -53,7 +67,7 @@
         </div>
         <div
           class="row justify-content-center mt-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3"
-          id="pet"
+          id="cardPets"
         ></div>
       </div>
     </main>
